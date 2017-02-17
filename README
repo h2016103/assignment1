@@ -2,7 +2,7 @@ Follow the following Steps:
 
 1. First change the permission of cpuinfo_cur_freq file.
    Type sudo chmod 777 /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq in the terminal.
-2. Go to the directory containing files ("main.c","user.c","Makefile") and type "make all" in the terminal.
+2. Go to the directory containing files ("main.c","user.c","Makefile") and type "make all" in the terminal.Ignore any warning related to       "implict function declaration".
 3. Insert module into the kernel  "sudo insmod main.ko".
 4. To generate the random number type "sudo ./a.out".
 5. Enter the range and random number will be generated.
