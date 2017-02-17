@@ -1,1 +1,12 @@
-This is the First assignment of Device Drivers
+Follow the following Steps:
+
+1. First change the permission of cpuinfo_cur_freq file.
+   Type sudo chmod 777 /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq in the terminal.
+2. Go to the directory containing files ("main.c","user.c","Makefile") and type "make all" in the terminal.
+3. Insert module into the kernel  "sudo insmod main.ko".
+4. To generate the random number type "sudo ./a.out".
+5. Enter the range and random number will be generated.
+6. Use "make clean" to perform cleanup action.
+
+##DESCRIPTION:
+This module uses the current CPU frequency to generate a random number. To read the current CPU frequency we have to read the LOG file "/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq" present in the user space.Now to read a user space file from the kernel space change the file segment using function "set_fs(get_ds)", then use __vfsread (virtual file system read) to read the CPU frequency data.  
